@@ -71,7 +71,7 @@ with open(filename,'wt') as f:
             f.write(',%s_%s'%(mods[modi],fields[fieldj]))
             output_format+=',%f'
 
-    f.write(',t1QS_meangray,t1QS_stdgray,t1QSdil_meangray,t1QSdil_stdgray,t1QSero_meangray,t1QSero_stdgray,t1QSbound_meangray,t1QSbound_stdgray')
+    f.write(',t1QSbound_int_meangray,t1QSbound_int_stdgray,t1QSbound_ext_meangray,t1QSbound_ext_stdgray')
 
     f.write(',lvol\n')
     output_format+=',%f'*(4) # we output lvol seperately
