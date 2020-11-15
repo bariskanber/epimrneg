@@ -7,7 +7,6 @@ import nibabel as nib
 import glob
 import os
 import xmltodict
-import time
 import argparse
 import time
 import sys
@@ -165,7 +164,6 @@ for file in glob.glob(subjectDIRprefix+args.subjectID+'*_Parcellation.nii.gz'):
 
         for regno in range(0,209):
             if regno not in regs: continue
-            start_time=time.time()
             Q=par==regno
 
             vol=np.sum(Q)
@@ -238,7 +236,4 @@ for file in glob.glob(subjectDIRprefix+args.subjectID+'*_Parcellation.nii.gz'):
             else:
                 raise Exception('Unknown subject type '+subject_type)
             f.write('\n')
-            f.flush()
-
-            print(regs[regno],vol,'elapsed time',time.time()-start_time)
 
